@@ -63,10 +63,22 @@ public class Hangman
     	
     	judge theJudge = new judge();
     	graphics viewer = new graphics();
-    	Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
     	String word = "nicnic";
     	
     	viewer.initial(word);
-    	System.out.print(viewer.getSecret());
+    	int failureProgress = 0;
+    	//System.out.print(HANGMANPICS[0]);
+    	
+    	while(failureProgress < 7)
+	    {
+	    	if(theJudge.guess('c', word, viewer.getSecret())) viewer.viewProgress();
+	    	else
+	    	{
+	    		viewer.viewProgress();
+	    		System.out.print(HANGMANPICS[failureProgress]);
+	    		failureProgress++;
+	    	}
+    	}
     }
 }

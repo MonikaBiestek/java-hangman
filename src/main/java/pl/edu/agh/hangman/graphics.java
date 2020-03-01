@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class graphics
 {
-private ArrayList<String> secret = new ArrayList<>();
+private ArrayList<Character> secret = new ArrayList<>();
 	
-	public ArrayList<String> getSecret()
+	public ArrayList<Character> getSecret()
 	{
 		return secret;
 	}
 
-	public void setSecret(ArrayList<String> secret)
+	public void setSecret(ArrayList<Character> secret)
 	{
 		this.secret = secret;
 	}
@@ -20,7 +20,15 @@ private ArrayList<String> secret = new ArrayList<>();
 	{
 		for(int i = 0; i < word.length(); i++)
     	{
-    		secret.add("_");
+    		this.secret.add('_');
     	}
+	}
+	
+	void viewProgress()
+	{
+		for(char being : this.secret)
+		{
+			System.out.print(being + " ");
+		}
 	}
 }
