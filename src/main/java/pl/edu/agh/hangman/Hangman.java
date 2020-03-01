@@ -1,8 +1,11 @@
 package pl.edu.agh.hangman;
 
-public class Hangman {
+import java.util.Scanner;
 
-    public static final String[] HANGMANPICS = new String[]{
+public class Hangman
+{
+    public static final String[] HANGMANPICS = new String[]
+    {
             "  +---+\n" +
                     "  |   |\n" +
                     "      |\n" +
@@ -54,6 +57,16 @@ public class Hangman {
                     "========"
     };
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+    	//tu szukanko slowa
+    	
+    	judge theJudge = new judge();
+    	graphics viewer = new graphics();
+    	Scanner scanner = new Scanner(System.in);
+    	String word = "nicnic";
+    	
+    	viewer.initial(word);
+    	System.out.print(viewer.getSecret());
     }
 }
