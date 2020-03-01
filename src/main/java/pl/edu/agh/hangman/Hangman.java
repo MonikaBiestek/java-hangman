@@ -65,6 +65,7 @@ public class Hangman
     	graphics viewer = new graphics();
         Scanner scanner = new Scanner(System.in);
     	String word = "nicnic";
+    	char letter;
     	
     	viewer.initial(word);
     	int failureProgress = 0;
@@ -72,7 +73,9 @@ public class Hangman
     	
     	while(failureProgress < 7)
 	    {
-	    	if(theJudge.guess('c', word, viewer.getSecret())) viewer.viewProgress();
+    		letter = scanner.next().charAt(0);
+    		
+	    	if(theJudge.guess(letter, word, viewer.getSecret())) viewer.viewProgress();
 	    	else
 	    	{
 	    		viewer.viewProgress();
