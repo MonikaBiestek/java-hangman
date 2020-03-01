@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class graphics
 {
-private ArrayList<Character> secret = new ArrayList<>();
+    private ArrayList<Character> secret = new ArrayList<>();
 	
 	public ArrayList<Character> getSecret()
 	{

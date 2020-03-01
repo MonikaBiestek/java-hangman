@@ -1,8 +1,6 @@
 package pl.edu.agh.hangman;
 
-import java.util.Scanner;
 import java.io.IOException;
-import java.util.List;
 
 public class Hangman
 {
@@ -62,39 +60,7 @@ public class Hangman
 
 	public static void main(String[] args) throws IOException
 	{
-		    ProvideRandomWord provideRandomWord = new ProvideRandomWord();
-	    	
-	    	judge theJudge = new judge();
-	    	graphics viewer = new graphics();
-	        Scanner scanner = new Scanner(System.in);
-	    	String word = provideRandomWord.getRandomWord(provideRandomWord.loadWords()).toLowerCase();
-	    	char letter;
-	    	
-	    	viewer.initial(word);
-	    	viewer.viewProgress();
-	    	System.out.println();
-	    	int failureProgress = 0;
-	    	
-	    	while(failureProgress < 7)
-		    {
-	    		System.out.println();
-	    		System.out.print("Podaj litere: ");
-	    		letter = scanner.next().toLowerCase().charAt(0);
-	    		
-		    	if(theJudge.guess(letter, word, viewer.getSecret())) viewer.viewProgress();
-		    	else
-		    	{
-		    		viewer.viewProgress();
-		    		System.out.println();
-		    		System.out.print(HANGMANPICS[failureProgress]);
-		    		failureProgress++;
-		    	}
-		    	
-		    	if(theJudge.checkEndStatus(viewer.getSecret())) failureProgress = 7;
-	    	}
-	    	
-	    	System.out.println();
-	    	System.out.print("Szukane slowo: " + word);
-	    	scanner.close();
+		gameOn hangingManGame = new gameOn();
+		hangingManGame.theGame(HANGMANPICS);
 	}
 }
