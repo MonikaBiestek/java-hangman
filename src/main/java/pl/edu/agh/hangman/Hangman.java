@@ -94,7 +94,7 @@ public class Hangman
 	    	}
 	    	
 	    	System.out.println();
-	    	System.out.print(word);
+	    	System.out.print("Szukane slowo: " + word);
 	    	scanner.close();
 	}
 }
