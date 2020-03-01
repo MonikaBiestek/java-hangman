@@ -20,7 +20,8 @@ private ArrayList<Character> secret = new ArrayList<>();
 	{
 		for(int i = 0; i < word.length(); i++)
     	{
-    		this.secret.add('_');
+			if(word.charAt(i) == ' ') this.secret.add(' ');
+			else this.secret.add('_');
     	}
 	}
 	

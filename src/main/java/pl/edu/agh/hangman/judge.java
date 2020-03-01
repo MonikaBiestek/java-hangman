@@ -6,7 +6,7 @@ public class judge
 {
 	boolean guess(char userLetter, String word, ArrayList<Character> wordView)
 	{
-		if(((int)userLetter > 65 && (int)userLetter < 90) || ((int)userLetter > 97 && (int)userLetter < 122) 
+		if(((int)userLetter >= 65 && (int)userLetter <= 90) || ((int)userLetter >= 97 && (int)userLetter <= 122) 
 				|| userLetter == 'ą' || userLetter == 'ć' || userLetter == 'ę' || userLetter == 'ł' || userLetter == 'ń'
 				|| userLetter == 'ó' || userLetter == 'ś' || userLetter == 'ź'  || userLetter == 'ż')
 		{

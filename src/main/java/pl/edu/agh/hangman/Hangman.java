@@ -67,7 +67,7 @@ public class Hangman
 	    	judge theJudge = new judge();
 	    	graphics viewer = new graphics();
 	        Scanner scanner = new Scanner(System.in);
-	    	String word = provideRandomWord.getRandomWord(provideRandomWord.loadWords());
+	    	String word = provideRandomWord.getRandomWord(provideRandomWord.loadWords()).toLowerCase();
 	    	char letter;
 	    	
 	    	viewer.initial(word);
@@ -79,7 +79,7 @@ public class Hangman
 		    {
 	    		System.out.println();
 	    		System.out.print("Podaj litere: ");
-	    		letter = scanner.next().charAt(0);
+	    		letter = scanner.next().toLowerCase().charAt(0);
 	    		
 		    	if(theJudge.guess(letter, word, viewer.getSecret())) viewer.viewProgress();
 		    	else
@@ -93,6 +93,8 @@ public class Hangman
 		    	if(theJudge.checkEndStatus(viewer.getSecret())) failureProgress = 7;
 	    	}
 	    	
+	    	System.out.println();
+	    	System.out.print(word);
 	    	scanner.close();
 	}
 }
