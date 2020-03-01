@@ -69,19 +69,25 @@ public class Hangman
     	
     	viewer.initial(word);
     	int failureProgress = 0;
-    	//System.out.print(HANGMANPICS[0]);
     	
     	while(failureProgress < 7)
 	    {
+    		System.out.println();
+    		System.out.println("Podaj litere: ");
     		letter = scanner.next().charAt(0);
     		
 	    	if(theJudge.guess(letter, word, viewer.getSecret())) viewer.viewProgress();
 	    	else
 	    	{
 	    		viewer.viewProgress();
+	    		System.out.println();
 	    		System.out.print(HANGMANPICS[failureProgress]);
 	    		failureProgress++;
 	    	}
+	    	
+	    	if(theJudge.checkEndStatus(viewer.getSecret())) failureProgress = 7;
     	}
+    	
+    	scanner.close();
     }
 }

@@ -8,17 +8,30 @@ public class judge
 	{
 		if(((int)userLetter > 65 && (int)userLetter < 90) || ((int)userLetter > 97 && (int)userLetter < 122))
 		{
-			this.search(userLetter, word, wordView);
-			return true;
+			return this.search(userLetter, word, wordView);
 		}
 		else return false;
 	}
 	
-	void search(char userLetter, String word, ArrayList<Character> wordView)
+	boolean search(char userLetter, String word, ArrayList<Character> wordView)
 	{
+		boolean letterFound = false;
+		
 		for(int i = 0; i < word.length(); i++)
 		{
-			if(word.charAt(i) == userLetter) wordView.set(i, userLetter);
+			if(word.charAt(i) == userLetter)
+			{
+				wordView.set(i, userLetter);
+				letterFound = true;
+			}
 		}
+		
+		return letterFound;
+	}
+	
+	boolean checkEndStatus(ArrayList<Character> wordView)
+	{
+		if(wordView.contains('_')) return false;
+		else return true;
 	}
 }
