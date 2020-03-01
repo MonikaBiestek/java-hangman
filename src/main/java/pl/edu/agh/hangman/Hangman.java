@@ -1,5 +1,8 @@
 package pl.edu.agh.hangman;
 
+import java.io.IOException;
+import java.util.List;
+
 public class Hangman {
 
     public static final String[] HANGMANPICS = new String[]{
@@ -54,6 +57,11 @@ public class Hangman {
                     "========"
     };
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+    	ProvideRandomWord provideRandomWord = new ProvideRandomWord();
+    	
+    	System.out.println(provideRandomWord.getRandomWord(provideRandomWord.loadWords()));
     }
+
+	
 }
