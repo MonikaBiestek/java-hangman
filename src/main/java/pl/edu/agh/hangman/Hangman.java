@@ -71,12 +71,14 @@ public class Hangman
 	    	char letter;
 	    	
 	    	viewer.initial(word);
+	    	viewer.viewProgress();
+	    	System.out.println();
 	    	int failureProgress = 0;
 	    	
 	    	while(failureProgress < 7)
 		    {
 	    		System.out.println();
-	    		System.out.println("Podaj litere: ");
+	    		System.out.print("Podaj litere: ");
 	    		letter = scanner.next().charAt(0);
 	    		
 		    	if(theJudge.guess(letter, word, viewer.getSecret())) viewer.viewProgress();
